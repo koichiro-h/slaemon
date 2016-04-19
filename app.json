@@ -1,0 +1,7 @@
+{
+  "name": "slack bot name is slaemon",
+  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "image": "heroku/python",
+  "repository": "https://git.heroku.com/slaemon.git",
+  "keywords": ["python", "slaemon" ]
+}
