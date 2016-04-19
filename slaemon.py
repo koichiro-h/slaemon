@@ -87,10 +87,6 @@ def yoyaku(message):
     #カレンダーサービスオブジェクトの取得
     oService = discovery.build('calendar', 'v3', http=oHttp)
 
-    #カレンダーリストの取得
-    CalendarList = oService.calendarList().get(calendarId='primary').execute()
-
-#    print(json.dumps(message.body))
     #チャットメッセージの取得
     jsMsgBody = json.dumps(message.body)
 
@@ -98,7 +94,6 @@ def yoyaku(message):
     strSummary = '自動化TF_MTG'  #summary
     strLocation = ''    #location
     strTimeZone = 'Asia/Tokyo'    #start.timeZone
-#    CalendarList['id']  #calendarID
 
     #日付の整形
     p=re.compile('start\s*(\d{4}[/|-|年]\d{1,2}[/|-|月]\d{1,2}日*)\s*(\d{1,2}[:|時]\d{1,2})')
@@ -129,9 +124,6 @@ def yoyaku(message):
     event = oService.events().insert(calendarId='primary', body=event).execute()
     message.reply("ほれ %s" % (event.get('htmlLink')))
     
-#    print(event)
-
-#    print(m(1))    
 
 def main():
 
