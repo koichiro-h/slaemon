@@ -16,7 +16,7 @@ except ImportError:
 SCOPES = 'https://www.googleapis.com/auth/calendar'
 CLIENT_SECRET_FILE = 'client_secret_472191694539-lc2ajaqlc62jqlkon1se16i5fhb5maef.apps.googleusercontent.com.json'
 APPLICATION_NAME = 'Google Calendar API Python Quickstart'
-myRepos = '/myRepos/TestBot'
+credential_dir = os.getcwd()
 
 #get_credentials
 def get_credentials():
@@ -29,8 +29,6 @@ def get_credentials():
         Credentials, the obtained credential.
     prease CLIENT_SECRET_FILE is puts same directory with botrun.py
     """
-    home_dir = os.environ.get('UserProfile')
-    credential_dir = os.path.join(home_dir, myRepos)
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir, CLIENT_SECRET_FILE)
