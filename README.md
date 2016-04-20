@@ -1,1 +1,5 @@
 # slaemon
+
+pythonモジュールのslackerを利用したslack用botです。
+Google Calendar APIと連携して、チャネル内で発言したメッセージフォーマットに応じてカレンダーにスケジュール登録します。CalendarAPIのTokenは別ファイルに記述しています(後日詳細を書きます)
+実装する場合slaemon.pyの記述を、slackページで作成したbotのAPI Tokenで書き換える必要があります。
