@@ -36,7 +36,7 @@ def get_credentials():
 #    if not os.path.exists(credential_dir):
 #        os.makedirs(credential_dir)
 #    credential_path = os.path.join(credential_dir, CLIENT_SECRET_FILE)
-    message.reply(os.path.curdir)
+
 #    store = oauth2client.file.Storage(credential_path)
     store = oauth2client.file.Storage(CLIENT_SECRET_FILE)
     credentials = store.get()
@@ -84,7 +84,7 @@ def yoyaku(message):
     import re
 
     #oauth2認証
-    oCred = get_credentials()
+#    oCred = get_credentials()
     oHttp = oCred.authorize(httplib2.Http())
 
     #カレンダーサービスオブジェクトの取得
@@ -124,9 +124,9 @@ def yoyaku(message):
         }
 
     #イベントの登録
-    event = oService.events().insert(calendarId='primary', body=event).execute()
-    message.reply("ほれ %s" % (event.get('htmlLink')))
-    
+#    event = oService.events().insert(calendarId='primary', body=event).execute()
+#    message.reply("ほれ %s" % (event.get('htmlLink')))
+    message.reply(os.path.curdir)
 
 def main():
 
