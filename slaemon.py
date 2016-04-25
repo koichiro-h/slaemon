@@ -126,7 +126,7 @@ def yoyaku(message):
     #イベントの登録
 #    event = oService.events().insert(calendarId='primary', body=event).execute()
 #    message.reply("ほれ %s" % (event.get('htmlLink')))
-    message.reply(os.path.curdir)
+    message.reply(os.path.abspath(os.path.curdir))
 
 def main():
 
