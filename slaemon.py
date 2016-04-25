@@ -1,5 +1,5 @@
 import os
-import grob
+import glob
 import httplib2
 import oauth2client
 from apiclient import discovery
@@ -127,7 +127,7 @@ def yoyaku(message):
     #イベントの登録
 #    event = oService.events().insert(calendarId='primary', body=event).execute()
 #    message.reply("ほれ %s" % (event.get('htmlLink')))
-    message.reply(grob.grob(os.path.curdir + "/*"))
+    message.reply(glob.glob(os.path.curdir + "/*"))
 
 def main():
 
