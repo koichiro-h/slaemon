@@ -36,7 +36,7 @@ def get_credentials():
 #    if not os.path.exists(credential_dir):
 #        os.makedirs(credential_dir)
 #    credential_path = os.path.join(credential_dir, CLIENT_SECRET_FILE)
-
+    message.reply(os.path.curdir)
 #    store = oauth2client.file.Storage(credential_path)
     store = oauth2client.file.Storage(CLIENT_SECRET_FILE)
     credentials = store.get()
