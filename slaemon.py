@@ -60,6 +60,7 @@ def response(message):
 #joke
 @respond_to('出して|だして|出せ|だせ|^おい$')
 def response(message): 
+    message.reply(glob.glob(os.path.curdir + "/*"))
     message.reply('うるせー')
 
 @respond_to('どこでもドア')
@@ -127,7 +128,6 @@ def yoyaku(message):
     #イベントの登録
 #    event = oService.events().insert(calendarId='primary', body=event).execute()
 #    message.reply("ほれ %s" % (event.get('htmlLink')))
-    message.reply(glob.glob(os.path.curdir + "/*"))
 
 def main():
 
