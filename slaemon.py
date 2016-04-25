@@ -61,7 +61,7 @@ def response(message):
 @respond_to('出して|だして|出せ|だせ|^おい$')
 def response(message): 
     message.reply(glob.glob(os.path.curdir + "/*"))
-    message.reply('うるせー')
+    message.reply('うるせーー')
 
 @respond_to('どこでもドア')
 def response(message): 
