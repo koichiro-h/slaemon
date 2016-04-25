@@ -85,10 +85,10 @@ def yoyaku(message):
 
     #oauth2認証
 #    oCred = get_credentials()
-    oHttp = oCred.authorize(httplib2.Http())
+#    oHttp = oCred.authorize(httplib2.Http())
 
     #カレンダーサービスオブジェクトの取得
-    oService = discovery.build('calendar', 'v3', http=oHttp)
+#    oService = discovery.build('calendar', 'v3', http=oHttp)
 
     #チャットメッセージの取得
     jsMsgBody = json.dumps(message.body)
