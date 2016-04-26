@@ -36,10 +36,10 @@ def get_credentials():
 #    credential_dir = os.path.curdir()
 #    if not os.path.exists(credential_dir):
 #        os.makedirs(credential_dir)
-#    credential_path = os.path.join(credential_dir, CLIENT_SECRET_FILE)
+    credential_path = os.path.join('/app', CLIENT_SECRET_FILE)
 
-#    store = oauth2client.file.Storage(credential_path)
-    store = oauth2client.file.Storage(CLIENT_SECRET_FILE)
+    store = oauth2client.file.Storage(credential_path)
+#    store = oauth2client.file.Storage(CLIENT_SECRET_FILE)
     credentials = store.get()
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
@@ -60,8 +60,7 @@ def response(message):
 #joke
 @respond_to('出して|だして|出せ|だせ|^おい$')
 def response(message): 
-    message.reply(glob.glob(os.path.join(os.path.abspath(os.path.dirname(__file__)),'/*'),recursive=True))
-    message.reply(__file__)
+    message.reply('うるせー')
 
 @respond_to('どこでもドア')
 def response(message): 
@@ -86,11 +85,11 @@ def yoyaku(message):
     import re
 
     #oauth2認証
-#    oCred = get_credentials()
-#    oHttp = oCred.authorize(httplib2.Http())
+    oCred = get_credentials()
+    oHttp = oCred.authorize(httplib2.Http())
 
     #カレンダーサービスオブジェクトの取得
-#    oService = discovery.build('calendar', 'v3', http=oHttp)
+    oService = discovery.build('calendar', 'v3', http=oHttp)
 
     #チャットメッセージの取得
     jsMsgBody = json.dumps(message.body)
@@ -126,8 +125,8 @@ def yoyaku(message):
         }
 
     #イベントの登録
-#    event = oService.events().insert(calendarId='primary', body=event).execute()
-#    message.reply("ほれ %s" % (event.get('htmlLink')))
+    event = oService.events().insert(calendarId='primary', body=event).execute()
+    message.reply("ほれ %s" % (event.get('htmlLink')))
 
 def main():
 
