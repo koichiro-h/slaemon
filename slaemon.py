@@ -1,3 +1,6 @@
+#!/app/.heroku/python/bin python3.5
+# -*- coding: utf-8 -*-
+
 import os
 import glob
 import httplib2
@@ -38,7 +41,7 @@ def get_credentials():
 #        os.makedirs(credential_dir)
 #    credential_path = os.path.join('/app', CLIENT_SECRET_FILE)
 #    credential_path = glob.glob('/app/client*')[0]
-    credential_path = '/app/client_secret_472191694539-lc2ajaqlc62jqlkon1se16i5fhb5maef.apps.googleusercontent.com.json'
+    credential_path = 'client_secret_472191694539-lc2ajaqlc62jqlkon1se16i5fhb5maef.apps.googleusercontent.com.json'
     store = oauth2client.file.Storage(credential_path)
 
     print(store)
