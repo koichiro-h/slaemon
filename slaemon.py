@@ -41,7 +41,7 @@ def get_credentials():
     credential_path = '/app/client_secret_472191694539-lc2ajaqlc62jqlkon1se16i5fhb5maef.apps.googleusercontent.com.json'
     store = oauth2client.file.Storage(credential_path)
 
-    message.reply(store)
+    print(store)
 
 #    store = oauth2client.file.Storage(CLIENT_SECRET_FILE)
     credentials = store.get()
