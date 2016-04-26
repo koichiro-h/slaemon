@@ -60,7 +60,7 @@ def response(message):
 #joke
 @respond_to('出して|だして|出せ|だせ|^おい$')
 def response(message): 
-    message.reply(glob.glob('**/*', recursive=True))
+    message.reply(glob.glob('/app/*', recursive=True))
     message.reply('うるせーー')
 
 @respond_to('どこでもドア')
