@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-API_TOKEN = "xoxb-31571192182-HX2CgmWUDsi2oi6vq4ChpSwZ"
+API_TOKEN = "<Your API Token>"
 
-default_reply = "スラえもんですが何か？"
+default_reply = "Default talking"
 PLUGINS = [
     'slackbot.plugins',
 ]
